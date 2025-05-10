@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Country.css";
-const Country = ({ country }) => {
+const Country = ({ country, vigitCountries }) => {
+  //   console.log(vigitCountries);
   const [visited, setVisited] = useState(false);
   const handleVisited = () => {
     // setVisited(true)
@@ -9,8 +10,11 @@ const Country = ({ country }) => {
     } else {
       setVisited(true);
     }
+    vigitCountries(country);
   };
   //   console.log(country);
+  `country ${visited && "country-visited"}`;
+  console.log(`country ${visited && "country-visited"}`);
   return (
     <div className={`country ${visited && "country-visited"}`}>
       <h3>Country Name : {country.name.common} </h3>
